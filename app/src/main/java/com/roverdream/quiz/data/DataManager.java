@@ -2,19 +2,24 @@ package com.roverdream.quiz.data;
 
 import com.roverdream.quiz.data.local.db.DbHelper;
 import com.roverdream.quiz.data.local.prefs.PreferencesHelper;
+import com.roverdream.quiz.data.model.others.QuestionCardData;
 import com.roverdream.quiz.data.remote.ApiHelper;
+
+import java.util.List;
 
 import io.reactivex.Observable;
 
 public interface DataManager extends DbHelper, PreferencesHelper, ApiHelper {
 
-    void updateApiHeader(Long userId, String accessToken);
-
-    void setUserAsLoggedOut();
+    Observable<List<QuestionCardData>> getQuestionCardData();
 
     Observable<Boolean> seedDatabaseQuestions();
 
     Observable<Boolean> seedDatabaseOptions();
+
+    void setUserAsLoggedOut();
+
+    void updateApiHeader(Long userId, String accessToken);
 
     void updateUserInfo(
             String accessToken,

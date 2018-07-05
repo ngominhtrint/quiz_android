@@ -1,4 +1,4 @@
-package com.roverdream.quiz.ui.utils.rx;
+package com.roverdream.quiz.utils.rx;
 
 import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;

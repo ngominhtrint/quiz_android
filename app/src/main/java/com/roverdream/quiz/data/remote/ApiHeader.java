@@ -42,10 +42,10 @@ public class ApiHeader {
         @SerializedName("user_id")
         private Long mUserId;
 
-        public ProtectedApiHeader(String accessToken, String apiKey, Long userId) {
-            this.mAccessToken = accessToken;
+        public ProtectedApiHeader(String apiKey, Long userId, String accessToken) {
             this.mApiKey = apiKey;
             this.mUserId = userId;
+            this.mAccessToken = accessToken;
         }
 
         public String getAccessToken() {

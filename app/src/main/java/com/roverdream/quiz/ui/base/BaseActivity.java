@@ -13,8 +13,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 
-import com.roverdream.quiz.ui.utils.CommonUtils;
-import com.roverdream.quiz.ui.utils.NetworkUtils;
+import com.roverdream.quiz.utils.CommonUtils;
+import com.roverdream.quiz.utils.NetworkUtils;
 
 import dagger.android.AndroidInjection;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -65,8 +65,9 @@ public abstract class BaseActivity<T extends ViewDataBinding, V extends BaseView
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
-
+        performDependencyInjection();
         super.onCreate(savedInstanceState);
+        performDataBinding();
     }
 
     public T getViewDataBinding() {

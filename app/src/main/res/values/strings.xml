@@ -27,7 +27,7 @@
     <!--Login-->
     <string name="login_dummy">Login Dummy</string>
     <string name="login">Login</string>
-    <string name="userEmail">Email</string>
+    <string name="email">Email</string>
     <string name="password">Password</string>
 
     <!--Login Validation-->

@@ -1,4 +1,4 @@
-package com.roverdream.quiz.ui.utils;
+package com.roverdream.quiz.utils;
 
 public class AppConstants {
 

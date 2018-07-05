@@ -1,4 +1,4 @@
-package com.roverdream.quiz.ui.utils;
+package com.roverdream.quiz.utils;
 
 import timber.log.BuildConfig;
 import timber.log.Timber;

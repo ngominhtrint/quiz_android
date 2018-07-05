@@ -1,14 +1,12 @@
 package com.roverdream.quiz;
 
 import android.app.Activity;
-import android.app.Application;
 import android.support.multidex.MultiDexApplication;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.interceptors.HttpLoggingInterceptor;
-import com.roverdream.quiz.di.component.AppComponent;
 import com.roverdream.quiz.di.component.DaggerAppComponent;
-import com.roverdream.quiz.ui.utils.AppLogger;
+import com.roverdream.quiz.utils.AppLogger;
 
 import javax.inject.Inject;
 
@@ -22,8 +20,8 @@ public class App extends MultiDexApplication implements HasActivityInjector {
     @Inject
     DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
 
-//    @Inject
-//    CalligraphyConfig mCalligraphyConfig;
+    @Inject
+    CalligraphyConfig mCalligraphyConfig;
 
     @Override
     public AndroidInjector<Activity> activityInjector() {
@@ -46,6 +44,6 @@ public class App extends MultiDexApplication implements HasActivityInjector {
             AndroidNetworking.enableLogging(HttpLoggingInterceptor.Level.BODY);
         }
 
-//        CalligraphyConfig.initDefault(mCalligraphyConfig);
+        CalligraphyConfig.initDefault(mCalligraphyConfig);
     }
 }

@@ -4,7 +4,7 @@ import android.arch.lifecycle.ViewModel;
 import android.databinding.ObservableBoolean;
 
 import com.roverdream.quiz.data.DataManager;
-import com.roverdream.quiz.ui.utils.rx.SchedulerProvider;
+import com.roverdream.quiz.utils.rx.SchedulerProvider;
 
 import java.lang.ref.WeakReference;
 
@@ -36,6 +36,10 @@ public abstract class BaseViewModel<N> extends ViewModel {
 
     public CompositeDisposable getCompositeDisposable() {
         return mCompositeDisposable;
+    }
+
+    public DataManager getDataManager() {
+        return mDataManager;
     }
 
     public ObservableBoolean getIsLoading() {

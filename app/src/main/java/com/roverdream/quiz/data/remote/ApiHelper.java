@@ -6,21 +6,21 @@ import com.roverdream.quiz.data.model.api.LoginResponse;
 import com.roverdream.quiz.data.model.api.LogoutResponse;
 import com.roverdream.quiz.data.model.api.OpenSourceResponse;
 
-import io.reactivex.Observable;
+import io.reactivex.Single;
 
 public interface ApiHelper {
 
     ApiHeader getApiHeader();
 
-    Observable<LoginResponse> doGoogleLoginApiCall(LoginRequest.GoogleLoginRequest request);
+    Single<LoginResponse> doGoogleLoginApiCall(LoginRequest.GoogleLoginRequest request);
 
-    Observable<LoginResponse> doFacebookLoginApiCall(LoginRequest.FacebookLoginRequest request);
+    Single<LoginResponse> doFacebookLoginApiCall(LoginRequest.FacebookLoginRequest request);
 
-    Observable<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request);
+    Single<LoginResponse> doServerLoginApiCall(LoginRequest.ServerLoginRequest request);
 
-    Observable<LogoutResponse> doLogoutApiCall();
+    Single<LogoutResponse> doLogoutApiCall();
 
-    Observable<BlogResponse> getBlogApiCall();
+    Single<BlogResponse> getBlogApiCall();
 
-    Observable<OpenSourceResponse> getOpenSourceApiCall();
+    Single<OpenSourceResponse> getOpenSourceApiCall();
 }
