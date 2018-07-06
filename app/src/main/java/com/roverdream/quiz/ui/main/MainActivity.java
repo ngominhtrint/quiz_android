@@ -31,6 +31,7 @@ import com.roverdream.quiz.databinding.NavHeaderMainBinding;
 import com.roverdream.quiz.ui.about.AboutFragment;
 import com.roverdream.quiz.ui.base.BaseActivity;
 import com.roverdream.quiz.ui.login.LoginActivity;
+import com.roverdream.quiz.ui.main.rating.RateUsDialog;
 import com.roverdream.quiz.utils.ScreenUtils;
 
 import javax.inject.Inject;
@@ -232,6 +233,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                     showAboutFragment();
                     return true;
                 case R.id.nav_item_rate_us:
+                    RateUsDialog.newInstance().show(getSupportFragmentManager());
                     return true;
                 case R.id.nav_item_feed:
                     return true;

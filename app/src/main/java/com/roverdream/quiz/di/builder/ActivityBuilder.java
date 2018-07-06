@@ -5,6 +5,7 @@ import com.roverdream.quiz.ui.login.LoginActivity;
 import com.roverdream.quiz.ui.login.LoginActivityModule;
 import com.roverdream.quiz.ui.main.MainActivity;
 import com.roverdream.quiz.ui.main.MainActivityModule;
+import com.roverdream.quiz.ui.main.rating.RateUsDialogProvider;
 import com.roverdream.quiz.ui.splash.SplashActivity;
 import com.roverdream.quiz.ui.splash.SplashActivityModule;
 
@@ -22,6 +23,7 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = {
             MainActivityModule.class,
-            AboutFragmentProvider.class })
+            AboutFragmentProvider.class,
+            RateUsDialogProvider.class })
     abstract MainActivity bindMainActivity();
 }

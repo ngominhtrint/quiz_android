@@ -1,4 +1,6 @@
 package com.roverdream.quiz.ui.main.rating;
 
-public class RateUsCallback {
+public interface RateUsCallback {
+
+    void dismissDialog();
 }
