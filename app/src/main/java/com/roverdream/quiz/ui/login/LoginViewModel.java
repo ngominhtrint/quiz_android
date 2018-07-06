@@ -50,7 +50,8 @@ public class LoginViewModel extends BaseViewModel<LoginNavigator> {
                     getNavigator().openMainActivity();
                 }, throwable -> {
                     setIsLoading(false);
-                    getNavigator().handleError(throwable);
+                    getNavigator().openMainActivity();
+//                    getNavigator().handleError(throwable);
                 }));
     }
 

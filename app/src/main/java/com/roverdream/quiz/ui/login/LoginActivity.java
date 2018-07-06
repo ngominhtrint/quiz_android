@@ -10,6 +10,7 @@ import com.roverdream.quiz.BR;
 import com.roverdream.quiz.R;
 import com.roverdream.quiz.databinding.ActivityLoginBinding;
 import com.roverdream.quiz.ui.base.BaseActivity;
+import com.roverdream.quiz.ui.main.MainActivity;
 
 import javax.inject.Inject;
 
@@ -58,7 +59,9 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding, LoginViewM
 
     @Override
     public void openMainActivity() {
-
+        Intent intent = MainActivity.newIntent(LoginActivity.this);
+        startActivity(intent);
+        finish();
     }
 
     @Override

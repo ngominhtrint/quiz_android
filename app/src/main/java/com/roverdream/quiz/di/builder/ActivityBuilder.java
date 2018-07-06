@@ -1,7 +1,10 @@
 package com.roverdream.quiz.di.builder;
 
+import com.roverdream.quiz.ui.about.AboutFragmentProvider;
 import com.roverdream.quiz.ui.login.LoginActivity;
 import com.roverdream.quiz.ui.login.LoginActivityModule;
+import com.roverdream.quiz.ui.main.MainActivity;
+import com.roverdream.quiz.ui.main.MainActivityModule;
 import com.roverdream.quiz.ui.splash.SplashActivity;
 import com.roverdream.quiz.ui.splash.SplashActivityModule;
 
@@ -16,4 +19,9 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = SplashActivityModule.class)
     abstract SplashActivity bindSplashActivity();
+
+    @ContributesAndroidInjector(modules = {
+            MainActivityModule.class,
+            AboutFragmentProvider.class })
+    abstract MainActivity bindMainActivity();
 }
