@@ -30,6 +30,7 @@ import com.roverdream.quiz.databinding.ActivityMainBinding;
 import com.roverdream.quiz.databinding.NavHeaderMainBinding;
 import com.roverdream.quiz.ui.about.AboutFragment;
 import com.roverdream.quiz.ui.base.BaseActivity;
+import com.roverdream.quiz.ui.feed.FeedActivity;
 import com.roverdream.quiz.ui.login.LoginActivity;
 import com.roverdream.quiz.ui.main.rating.RateUsDialog;
 import com.roverdream.quiz.utils.ScreenUtils;
@@ -236,6 +237,7 @@ public class MainActivity extends BaseActivity<ActivityMainBinding, MainViewMode
                     RateUsDialog.newInstance().show(getSupportFragmentManager());
                     return true;
                 case R.id.nav_item_feed:
+                    startActivity(FeedActivity.newIntent(MainActivity.this));
                     return true;
                 case R.id.nav_item_logout:
                     mMainViewModel.logout();

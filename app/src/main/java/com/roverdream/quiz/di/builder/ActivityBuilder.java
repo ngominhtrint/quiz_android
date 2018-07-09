@@ -1,6 +1,11 @@
 package com.roverdream.quiz.di.builder;
 
 import com.roverdream.quiz.ui.about.AboutFragmentProvider;
+import com.roverdream.quiz.ui.feed.FeedActivity;
+import com.roverdream.quiz.ui.feed.FeedActivityModule;
+import com.roverdream.quiz.ui.feed.blogs.BlogFragmentModule;
+import com.roverdream.quiz.ui.feed.opensource.OpenSourceFragment;
+import com.roverdream.quiz.ui.feed.opensource.OpenSourceFragmentModule;
 import com.roverdream.quiz.ui.login.LoginActivity;
 import com.roverdream.quiz.ui.login.LoginActivityModule;
 import com.roverdream.quiz.ui.main.MainActivity;
@@ -26,4 +31,11 @@ public abstract class ActivityBuilder {
             AboutFragmentProvider.class,
             RateUsDialogProvider.class })
     abstract MainActivity bindMainActivity();
+
+    @ContributesAndroidInjector(modules = {
+            FeedActivityModule.class,
+            BlogFragmentModule.class,
+            OpenSourceFragmentModule.class
+    })
+    abstract FeedActivity bindFeedActivity();
 }

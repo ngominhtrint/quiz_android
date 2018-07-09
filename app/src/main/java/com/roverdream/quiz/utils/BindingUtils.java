@@ -1,9 +1,17 @@
 package com.roverdream.quiz.utils;
 
+import android.content.Context;
 import android.databinding.BindingAdapter;
+import android.support.v7.widget.RecyclerView;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.mindorks.placeholderview.SwipePlaceHolderView;
+import com.roverdream.quiz.data.model.api.BlogResponse;
 import com.roverdream.quiz.data.model.others.QuestionCardData;
+import com.roverdream.quiz.ui.feed.blogs.BlogAdapter;
+import com.roverdream.quiz.ui.feed.opensource.OpenSourceAdapter;
+import com.roverdream.quiz.ui.feed.opensource.OpenSourceItemViewModel;
 import com.roverdream.quiz.ui.main.MainViewModel;
 import com.roverdream.quiz.ui.main.QuestionCard;
 
@@ -13,6 +21,24 @@ public final class BindingUtils {
 
     private BindingUtils() {
         //This class is not publicly instantiable
+    }
+
+    @BindingAdapter({"adapter"})
+    public static void addBlogItems(RecyclerView recyclerView, List<BlogResponse.Blog> blogs) {
+        BlogAdapter adapter = (BlogAdapter) recyclerView.getAdapter();
+        if (adapter != null) {
+            adapter.clearItems();
+            adapter.addItems(blogs);
+        }
+    }
+
+    @BindingAdapter({"adapter"})
+    public static void addOpenSourceItems(RecyclerView recyclerView, List<OpenSourceItemViewModel> openSourceItems) {
+        OpenSourceAdapter adapter = (OpenSourceAdapter) recyclerView.getAdapter();
+        if (adapter != null) {
+            adapter.clearItems();
+            adapter.addItems(openSourceItems);
+        }
     }
 
     @BindingAdapter({"adapter", "action"})
@@ -30,5 +56,9 @@ public final class BindingUtils {
         }
     }
 
-
+    @BindingAdapter("imageUrl")
+    public static void setImageUrl(ImageView imageView, String url) {
+        Context context = imageView.getContext();
+        Glide.with(context).load(url).into(imageView);
+    }
 }
