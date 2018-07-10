@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
 import com.roverdream.quiz.ui.feed.blogs.BlogFragment;
+import com.roverdream.quiz.ui.feed.opensource.OpenSourceFragment;
 
 public class FeedPagerAdapter extends FragmentStatePagerAdapter {
 
@@ -26,6 +27,13 @@ public class FeedPagerAdapter extends FragmentStatePagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        return null;
+        switch (position) {
+            case 0:
+                return BlogFragment.newInstance();
+            case 1:
+                return OpenSourceFragment.newInstance();
+            default:
+                return null;
+        }
     }
 }

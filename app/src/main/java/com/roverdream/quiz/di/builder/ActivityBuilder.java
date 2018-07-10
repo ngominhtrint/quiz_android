@@ -4,8 +4,10 @@ import com.roverdream.quiz.ui.about.AboutFragmentProvider;
 import com.roverdream.quiz.ui.feed.FeedActivity;
 import com.roverdream.quiz.ui.feed.FeedActivityModule;
 import com.roverdream.quiz.ui.feed.blogs.BlogFragmentModule;
+import com.roverdream.quiz.ui.feed.blogs.BlogFragmentProvider;
 import com.roverdream.quiz.ui.feed.opensource.OpenSourceFragment;
 import com.roverdream.quiz.ui.feed.opensource.OpenSourceFragmentModule;
+import com.roverdream.quiz.ui.feed.opensource.OpenSourceFragmentProvider;
 import com.roverdream.quiz.ui.login.LoginActivity;
 import com.roverdream.quiz.ui.login.LoginActivityModule;
 import com.roverdream.quiz.ui.main.MainActivity;
@@ -34,8 +36,8 @@ public abstract class ActivityBuilder {
 
     @ContributesAndroidInjector(modules = {
             FeedActivityModule.class,
-            BlogFragmentModule.class,
-            OpenSourceFragmentModule.class
+            BlogFragmentProvider.class,
+            OpenSourceFragmentProvider.class
     })
     abstract FeedActivity bindFeedActivity();
 }
