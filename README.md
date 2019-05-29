@@ -7,4 +7,5 @@ https://github.com/MindorksOpenSource/android-mvvm-architecture
 - First change from feature 1
 
 - 2nd change from master
+- This is 1st change from hotfix
 
