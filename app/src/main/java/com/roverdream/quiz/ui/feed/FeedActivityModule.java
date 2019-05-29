@@ -1,10 +1,6 @@
 package com.roverdream.quiz.ui.feed;
 
-import android.arch.lifecycle.ViewModelProvider;
-
-import com.roverdream.quiz.ViewModelProviderFactory;
 import com.roverdream.quiz.data.DataManager;
-import com.roverdream.quiz.ui.main.MainViewModel;
 import com.roverdream.quiz.utils.rx.SchedulerProvider;
 
 import dagger.Module;
