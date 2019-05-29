@@ -8,4 +8,4 @@ https://github.com/MindorksOpenSource/android-mvvm-architecture
 
 - 2nd change from master
 - This is 1st change from hotfix
-
+- This is 2nd change from hotfix
